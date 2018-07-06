@@ -9,6 +9,10 @@ import UIKit
 
 class ChannelVC: UIViewController {
 
+    //Outlets
+    
+    /*we need an outlet because eventually we will change it from saying login to the user's name */
+    @IBOutlet weak var loginBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 60
@@ -16,6 +20,10 @@ class ChannelVC: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func loginBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: TO_LOGIN, sender: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
